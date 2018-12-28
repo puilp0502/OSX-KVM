@@ -47,3 +47,13 @@ It seems that this problem can be fixed by using OVMF + Clover.
 
 Update: OVMF + Clover doesn't help. It seems that macOS is missing the required
 drivers for the EHCI, and XHCI controllers that are exposed by QEMU.
+
+### General Advices
+
+#### Graphics Acceleration on UEFI
+
+Seems like `-device qxl-vga,id=video0,ram_size=67108864,vram_size=67108864,vgamem_mb=16' is our best bet.
+ 
+#### QEMU
+
+Use QEMU v3.1.0 (built from source)
